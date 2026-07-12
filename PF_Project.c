@@ -383,7 +383,7 @@ int ownsAccount(Account list[], int pos, char *uid)
 }
 
 /* 
-    KEY HELPER — selectMyAccount()
+    KEY HELPER Â— selectMyAccount()
 
    Ye function:
    1. uid ke saare accounts dhoondhta hai
@@ -422,7 +422,7 @@ int selectMyAccount(char *uid)
 
     int pick;
     if (count == 1) {
-        // Sirf ek account — automatically select 
+        // Sirf ek account Â— automatically select 
         pick = 1;
         printf("Auto-selected: Account %d\n", list[matches[0]].accNo);
     } else {
@@ -514,7 +514,7 @@ void userWithdraw(char *uid)
 
 void userSendMoney(char *uid)
 {
-    // SENDER — apni list se select karo
+    // SENDER Â— apni list se select karo
     printf("\n-- Select YOUR account to send FROM --\n");
     int fromAcc = selectMyAccount(uid);
     if (fromAcc == -1) return;
@@ -525,7 +525,7 @@ void userSendMoney(char *uid)
     if (fromPos == -1)                    { printf("Error loading account.\n"); return; }
     if (!ownsAccount(list, fromPos, uid)) return;
 
-    // RECEIVER — accNo manually dalo (doosre ka account)
+    // RECEIVER Â— accNo manually dalo (doosre ka account)
     int toAcc;
     printf("Enter Destination Account Number: "); scanf("%d", &toAcc);
 
@@ -692,7 +692,6 @@ void userMenu(char *username)
         printf("4. Send Money\n");
         printf("5. Pay Utility Bill\n");
         printf("6. Account Statement\n");
-        printf("7. Update My Account\n");
         printf("0. Logout\n");
         printf("Choice: ");
         scanf("%d", &choice);
@@ -704,7 +703,6 @@ void userMenu(char *username)
             case 4: userSendMoney(username);      break;
             case 5: userPayBill(username);        break;
             case 6: userStatement(username);      break;
-            case 7: userUpdateAccount(username);  break;
             case 0: printf("Logged out.\n");      break;
             default: printf("Invalid choice.\n");
         }
